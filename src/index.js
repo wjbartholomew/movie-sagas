@@ -20,9 +20,11 @@ function* rootSaga() {
 
 
 
-function* fetchGenres() {
+function* fetchGenres(action) {
+
+    let id = action.payload + 1
     try {
-        const genres = yield axios.get('/genres');
+        const genres = yield axios.get(`/genres/${id}`);
         yield put({ type: 'SET_GENRES', payload: genres.data });
     } catch (error) {
         console.log('FAILED GET', error);
