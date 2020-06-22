@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { HashRouter as Router, Route } from "react-router-dom";
+import MovieList from '../MovieList/MovieList.js';
+import MovieDetails from '../MovieDetails/MovieDetails.js';
+import MovieEdit from '../MovieEdit/MovieEdit.js';
 import './App.css';
 
 class App extends Component {
@@ -6,7 +10,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <p>Empty Page</p>
+        <Router>
+          <Route exact path="/" component={MovieList} />
+          <Route path="/details" component={MovieDetails} />
+          <Route path="/edit" component={MovieEdit} />
+        </Router>
       </div>
     );
   }
