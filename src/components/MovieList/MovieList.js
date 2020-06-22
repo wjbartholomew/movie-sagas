@@ -34,7 +34,7 @@ class MovieList extends Component {
                         <div key={item.id}className="grid-item">
                             <input type="image" key={item.id} src={item.poster} alt={item.title} value={item.id} onClick={this.displayDetails} />
                             <p>{item.title}</p>
-                            <p>{item.id}</p>
+                            
                         </div>
                     )
                 }
